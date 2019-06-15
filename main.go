@@ -31,6 +31,8 @@ func main() {
 	}
 	e.Renderer = renderer
 
+	e.File("/","index.html")
+	e.File("/img/knap.png", "img/knap.png")
 	e.GET("/hello", Hello)
 	e.Logger.Fatal(e.Start(":1323"))
 }
