@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6355a5-556a-4232-bbe9-9e435f35ea1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/deployed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/fail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/pending.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/running.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/deleteDone.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/editDone.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/get.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/services.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/spaces.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/templates.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/createDone.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/createDone.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/edit.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1623">
-              <caret line="189" column="38" lean-forward="true" selection-start-line="189" selection-start-column="38" selection-end-line="189" selection-end-column="38" />
+            <state relative-caret-position="113">
+              <caret line="253" selection-start-line="253" selection-end-line="263" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -40,23 +26,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="6231" column="81" selection-start-line="6231" selection-start-column="81" selection-end-line="6231" selection-end-column="81" />
+            <state relative-caret-position="230">
+              <caret line="6228" column="25" selection-start-line="6228" selection-start-column="25" selection-end-line="6228" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/templates.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="6226" column="57" lean-forward="true" selection-start-line="6226" selection-start-column="57" selection-end-line="6226" selection-end-column="57" />
+            <state relative-caret-position="173">
+              <caret line="6230" column="179" lean-forward="true" selection-start-line="6230" selection-start-column="179" selection-end-line="6230" selection-end-column="194" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#1;n#td#1;n#tr#1;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#td#1;n#tr#1;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#td#1;n#tr#1;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#td#1;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#1;n#td#1;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#td#1;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -99,11 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/services.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="368">
               <caret line="6214" column="36" selection-start-line="6214" selection-start-column="36" selection-end-line="6214" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/create.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="6221" selection-start-line="6221" selection-end-line="6228" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -132,12 +128,12 @@
       <find>submit</find>
       <find>range</find>
       <find>/spaces</find>
-      <find>GetEdit</find>
       <find>background-color: green</find>
+      <find>GetEdit</find>
     </findStrings>
     <replaceStrings>
-      <replace>&lt;/b&gt;&lt;/h3&gt;</replace>
       <replace>background-color: #76aaea</replace>
+      <replace>&lt;/b&gt;&lt;/h3&gt;</replace>
     </replaceStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -156,11 +152,11 @@
         <option value="$PROJECT_DIR$/views/deleteDone.html" />
         <option value="$PROJECT_DIR$/views/editDone.html" />
         <option value="$PROJECT_DIR$/main.go" />
-        <option value="$PROJECT_DIR$/views/create.html" />
-        <option value="$PROJECT_DIR$/views/edit.html" />
         <option value="$PROJECT_DIR$/views/templates.html" />
         <option value="$PROJECT_DIR$/views/list.html" />
         <option value="$PROJECT_DIR$/views/services.html" />
+        <option value="$PROJECT_DIR$/views/create.html" />
+        <option value="$PROJECT_DIR$/views/edit.html" />
       </list>
     </option>
   </component>
@@ -353,37 +349,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/views/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1623">
-          <caret line="189" column="38" lean-forward="true" selection-start-line="189" selection-start-column="38" selection-end-line="189" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="6221" column="39" selection-start-line="6221" selection-start-column="39" selection-end-line="6221" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="6214" column="36" selection-start-line="6214" selection-start-column="36" selection-end-line="6214" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="6237" column="53" selection-start-line="6237" selection-start-column="53" selection-end-line="6237" selection-end-column="71" />
+        <state relative-caret-position="152">
+          <caret line="6221" selection-start-line="6221" selection-end-line="6228" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="6231" column="81" selection-start-line="6231" selection-start-column="81" selection-end-line="6231" selection-end-column="81" />
+        <state relative-caret-position="230">
+          <caret line="6228" column="25" selection-start-line="6228" selection-start-column="25" selection-end-line="6228" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="253" selection-start-line="253" selection-end-line="263" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/templates.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="6226" column="57" lean-forward="true" selection-start-line="6226" selection-start-column="57" selection-end-line="6226" selection-end-column="57" />
+        <state relative-caret-position="173">
+          <caret line="6230" column="179" lean-forward="true" selection-start-line="6230" selection-start-column="179" selection-end-line="6230" selection-end-column="194" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#1;n#td#1;n#tr#1;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#td#1;n#tr#1;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#2;n#td#1;n#tr#1;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#td#1;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#1;n#td#1;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#td#1;n#tr#2;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -413,20 +424,6 @@
             <element signature="n#style#0;n#table#4;n#td#1;n#tr#3;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#4;n#td#1;n#tr#3;n#table#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="6221" column="39" selection-start-line="6221" selection-start-column="39" selection-end-line="6221" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/services.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="6214" column="36" selection-start-line="6214" selection-start-column="36" selection-end-line="6214" selection-end-column="36" />
         </state>
       </provider>
     </entry>
