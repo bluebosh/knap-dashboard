@@ -6095,6 +6095,9 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/list">Application List</a>
                 </li><br />
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/spaces">Spaces</a>
+                </li><br />
+                <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/services">Services</a>
                 </li><br />
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
@@ -6208,16 +6211,18 @@
 
             <tr>
                 <th>Application Name</th>
+                <th>Version</th>
                 <th>Status</th>
                 <th>Instance</th>
                 <th>Operation</th>
             </tr>
             {{range .}}
                 <tr>
-                    <td>{{.Spec.AppName}}</td>
-                    <td>{{.Status.Ready}}</td>
+                    <td><a href="/get?name={{.Name}}">{{.Spec.AppName}}</a></td>
+                    <td>{{.Generation}}</td>
+                    <td><img src="img/{{.Status.Ready}}.png" alt="{{.Status.Ready}}" width="12px" height="12px" />&nbsp;{{.Status.Ready}}</td>
                     <td>{{.Status.Instance}}/{{.Spec.Size}}</td>
-                    <td><a>Edit</a> | <a>Delete</a></td>
+                    <td><a href="/edit?name={{.Name}}">Edit</a> | <a href="/delete?name={{.Name}}" onClick="return confirm('Are you absolutely sure you want to delete this application?')">Delete</a></td>
                 </tr>
             {{end}}
         </table>

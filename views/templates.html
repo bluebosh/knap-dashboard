@@ -6117,11 +6117,131 @@
 <br>
 <main class="main has-custom-left-nav " role="main" aria-label="Application Details - IBM Cloud">
     <div style="padding: 30px">
+        <style>
+            .responstable {
+                margin: 1em 0;
+                width: 100%;
+                overflow: hidden;
+                background: #FFF;
+                color: #024457;
+                border-radius: 10px;
+                border: 1px solid #167F92;
+            }
+            .responstable tr {
+                border: 1px solid #D9E4E6;
+            }
+            .responstable tr:nth-child(odd) {
+                background-color: #EAF3F3;
+            }
+            .responstable th {
+                display: none;
+                border: 1px solid #FFF;
+                background-color: #167F92;
+                color: #FFF;
+                padding: 1em;
+            }
+            .responstable th:first-child {
+                display: table-cell;
+                text-align: center;
+            }
+            .responstable th:nth-child(2) {
+                display: table-cell;
+            }
+            .responstable th:nth-child(2) span {
+                display: none;
+            }
+            .responstable th:nth-child(2):after {
+                content: attr(data-th);
+            }
+            @media (min-width: 480px) {
+                .responstable th:nth-child(2) span {
+                    display: block;
+                }
+                .responstable th:nth-child(2):after {
+                    display: none;
+                }
+            }
+            .responstable td {
+                display: block;
+                word-wrap: break-word;
+                max-width: 7em;
+            }
+            .responstable td:first-child {
+                display: table-cell;
+                text-align: center;
+                border-right: 1px solid #D9E4E6;
+            }
+            @media (min-width: 480px) {
+                .responstable td {
+                    border: 1px solid #D9E4E6;
+                }
+            }
+            .responstable th, .responstable td {
+                text-align: left;
+                margin: .5em 1em;
+            }
+            @media (min-width: 480px) {
+                .responstable th, .responstable td {
+                    display: table-cell;
+                    padding: 1em;
+                }
+            }
+
+            body {
+                padding: 0 2em;
+                font-family: Arial, sans-serif;
+                color: #024457;
+                background: #f2f2f2;
+            }
+
+            h1 {
+                font-family: Verdana;
+                font-weight: normal;
+                color: #024457;
+            }
+            h1 span {
+                color: #167F92;
+            }
+        </style>
         <br>
-        <h2><b>Create New Application</b></h2><br>
+        <h2><b>Template List [Developing]</b></h2><br>
         This project aims to bring a simple CI/CD experience to end users from building to deploying a Cloud application on Kubernets (or Knative).  <br>
         <br><br><br>
-        <h3>Thank you for create new application <font color="red">{{index . "name"}}</font>! Please access <a href="/list">Application List</a> page to check your new application. </h3>
+        <table class="responstable">
+
+            <tr>
+                <th width="15%">Template Name</th>
+                <th>Template Flow</th>
+            </tr>
+            <tr>
+                <td style="font-size: 12px; vertical-align: middle;">build-and-deploy</td>
+                <td>
+                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">source-to-image</font></td></tr></table>
+                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
+                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">deploy-using-kubectl</font></td></tr></table>
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px; vertical-align: middle;">build-and-deploy-test</td>
+                <td>
+                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">source-to-image</font></td></tr></table>
+                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
+                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">deploy-using-kubectl</font></td></tr></table>
+                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
+                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">test-on-cluster</font></td></tr></table>
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px; vertical-align: middle;">more-complex</td>
+                <td>
+                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">source-to-image</font></td></tr></table>
+                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
+                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">deploy-using-kubectl</font></td></tr></table>
+                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
+                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">blue-green-upgrade</font></td></tr></table>
+                </td>
+            </tr>
+        </table>
     </div>
 </main>
 </body>

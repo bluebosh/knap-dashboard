@@ -44,11 +44,66 @@ func main() {
 	e.Renderer = renderer
 
 	e.File("/img/knap.png", "img/knap.png")
+	e.File("/img/Running.png", "img/running.png")
+	e.File("/img/Pending.png", "img/pending.png")
+	e.File("/img/Deployed.png", "img/deployed.png")
+	e.File("/img/Fail.png", "img/fail.png")
 	e.File("/","index.html")
 	e.File("/create","views/create.html")
+	e.File("/templates", "views/templates.html")
+	e.GET("/get", Get)
 	e.GET("/list", List)
+	e.GET("/spaces", Spaces)
+	e.GET("/services", Services)
 	e.GET("/createnew", CreateNew)
+	e.GET("/edit", Edit)
+	e.GET("/getedit", GetEdit)
+	e.GET("/delete", Delete)
 	e.Logger.Fatal(e.Start(":1323"))
+}
+
+func Get(c echo.Context) error {
+	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		glog.Fatalf("Error building kubeconfig: %v", err)
+	}
+
+	knapClient, err := knapclientset.NewForConfig(cfg)
+	if err != nil {
+		glog.Fatalf("Error building knap clientset: %v", err)
+	}
+
+	app, err := knapClient.KnapV1alpha1().Appengines("default").Get(c.Request().FormValue("name"), metav1.GetOptions{})
+	if err != nil {
+		glog.Fatalf("Error getting appengine: %v", c.Request().FormValue("name"))
+	}
+	fmt.Print("Get appengine", "appengine name", app.Name)
+	return c.Render(http.StatusOK, "get.html", app)
+}
+
+func Delete(c echo.Context) error {
+	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		glog.Fatalf("Error building kubeconfig: %v", err)
+	}
+
+	knapClient, err := knapclientset.NewForConfig(cfg)
+	if err != nil {
+		glog.Fatalf("Error building knap clientset: %v", err)
+	}
+
+	app, err := knapClient.KnapV1alpha1().Appengines("default").Get(c.Request().FormValue("name"), metav1.GetOptions{})
+	if err != nil {
+		glog.Fatalf("Error getting appengine: %v", c.Request().FormValue("name"))
+	}
+	fmt.Print("Get appengine", "appengine name", app.Spec.AppName)
+
+	err = knapClient.KnapV1alpha1().Appengines("default").Delete(app.Name, &metav1.DeleteOptions{})
+	if err != nil {
+		glog.Fatalf("Error deleting appengine: %v", c.Request().FormValue("name"))
+	}
+	fmt.Print("Delete appengine", "appengine name", app.Name)
+	return c.Render(http.StatusOK, "deleteDone.html", app.Spec.AppName)
 }
 
 func List(c echo.Context) error {
@@ -69,6 +124,46 @@ func List(c echo.Context) error {
 		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance) + "/" + fmt.Sprint(app.Spec.Size), app.Status.Domain)
 	}
 	return c.Render(http.StatusOK, "list.html", appLst.Items)
+}
+
+func Spaces(c echo.Context) error {
+	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		glog.Fatalf("Error building kubeconfig: %v", err)
+	}
+
+	knapClient, err := knapclientset.NewForConfig(cfg)
+	if err != nil {
+		glog.Fatalf("Error building knap clientset: %v", err)
+	}
+
+	appLst, err := knapClient.KnapV1alpha1().Appengines("default").List(metav1.ListOptions{})
+	color.Cyan("%-30s%-20s%-20s%-20s%-20s\n", "Engine Name", "Application Name", "Ready", "Instance", "Domain")
+	for i := 0; i < len(appLst.Items); i++ {
+		app := appLst.Items[i]
+		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance) + "/" + fmt.Sprint(app.Spec.Size), app.Status.Domain)
+	}
+	return c.Render(http.StatusOK, "spaces.html", appLst.Items)
+}
+
+func Services(c echo.Context) error {
+	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		glog.Fatalf("Error building kubeconfig: %v", err)
+	}
+
+	knapClient, err := knapclientset.NewForConfig(cfg)
+	if err != nil {
+		glog.Fatalf("Error building knap clientset: %v", err)
+	}
+
+	appLst, err := knapClient.KnapV1alpha1().Appengines("default").List(metav1.ListOptions{})
+	color.Cyan("%-30s%-20s%-20s%-20s%-20s\n", "Engine Name", "Application Name", "Ready", "Instance", "Domain")
+	for i := 0; i < len(appLst.Items); i++ {
+		app := appLst.Items[i]
+		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance) + "/" + fmt.Sprint(app.Spec.Size), app.Status.Domain)
+	}
+	return c.Render(http.StatusOK, "services.html", appLst.Items)
 }
 
 func CreateNew(c echo.Context) error {
@@ -118,6 +213,66 @@ func CreateNew(c echo.Context) error {
 	return c.Render(http.StatusOK, "createDone.html", map[string]interface{}{
 		"name": r.FormValue("appName"),
 	})
+}
 
+func Edit(c echo.Context) error {
+	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		glog.Fatalf("Error building kubeconfig: %v", err)
+	}
 
+	knapClient, err := knapclientset.NewForConfig(cfg)
+	if err != nil {
+		glog.Fatalf("Error building knap clientset: %v", err)
+	}
+
+	app, err := knapClient.KnapV1alpha1().Appengines("default").Get(c.Request().FormValue("name"), metav1.GetOptions{})
+	if err != nil {
+		glog.Fatalf("Error getting appengine: %v", c.Request().FormValue("name"))
+	}
+	fmt.Print("Get appengine", "appengine name", app.Name)
+	return c.Render(http.StatusOK, "edit.html", app)
+}
+
+func GetEdit(c echo.Context) error {
+	r := c.Request()
+	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		glog.Fatalf("Error building kubeconfig: %v", err)
+	}
+
+	knapClient, err := knapclientset.NewForConfig(cfg)
+	if err != nil {
+		glog.Fatalf("Error building knap clientset: %v", err)
+	}
+
+	app, err := knapClient.KnapV1alpha1().Appengines("default").Get(r.FormValue("appName") + "-appengine", metav1.GetOptions{})
+	if err != nil {
+		glog.Fatalf("Error getting appengine: %v", r.FormValue("appName") + "-appengine")
+	}
+
+	size, err:= strconv.ParseInt(r.FormValue("size"),10,32)
+	size32 := int32(size)
+	if err != nil {
+		//glog.Fatalf("Error creating application engine: %s", args[0])
+		fmt.Println("Error parsing size parameter", err)
+	}
+
+	app.Spec.GitRevision = r.FormValue("gitRevision")
+	//app.Spec.GitWatch = r.FormValue("gitWatch")
+	app.Spec.Size = size32
+	app.Spec.PipelineTemplate = r.FormValue("template")
+
+	_, err = knapClient.KnapV1alpha1().Appengines("default").Update(app)
+
+	if err != nil {
+		//glog.Fatalf("Error creating application engine: %s", args[0])
+		fmt.Println("Error updating application engine", r.FormValue("appName"), err)
+	} else {
+		fmt.Println("Application engine", r.FormValue("appName"), "is updated successfully")
+	}
+
+	return c.Render(http.StatusOK, "editDone.html", map[string]interface{}{
+		"name": r.FormValue("appName"),
+	})
 }
