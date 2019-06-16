@@ -2,56 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6355a5-556a-4232-bbe9-9e435f35ea1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/createDone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/AUTHORS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/CONTRIBUTORS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/PATENTS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/idna/idna.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/idna/punycode.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/idna/tables.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/idna/trie.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/idna/trieval.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mkall.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mkall.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_freebsd.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_freebsd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_386.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_386.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_amd64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_amd64.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_arm.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_arm.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_arm64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_arm64.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_386.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_386.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_amd64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_amd64.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_arm.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_arm.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_arm64.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_arm64.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/secure/bidirule/bidirule.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/secure/bidirule/bidirule10.0.0.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/secure/bidirule/bidirule9.0.0.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/transform/transform.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/transform/transform.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/bidi.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/bracket.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/core.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/gen.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/gen_ranges.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/gen_trieval.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/prop.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/tables10.0.0.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/tables9.0.0.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/bidi/trieval.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/composition.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/composition.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/forminfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/forminfo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/iter.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/iter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/maketables.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/maketables.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/normalize.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/normalize.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/readwriter.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/readwriter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/tables10.0.0.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/tables10.0.0.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/tables9.0.0.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/tables9.0.0.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/transform.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/unicode/norm/transform.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/fatih/color/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/fatih/color/Gopkg.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/fatih/color/Gopkg.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/fatih/color/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/fatih/color/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/fatih/color/color.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/fatih/color/doc.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/inconshreveable/mousetrap/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/inconshreveable/mousetrap/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/inconshreveable/mousetrap/trap_others.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/inconshreveable/mousetrap/trap_windows.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/inconshreveable/mousetrap/trap_windows_1.4.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/.mailmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/args.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/bash_completions.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/bash_completions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/cobra.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/command.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/command_notwin.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/command_win.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/powershell_completions.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/powershell_completions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/shell_completions.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/zsh_completions.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/spf13/cobra/zsh_completions.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/create.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+            <state relative-caret-position="285">
+              <caret line="70" column="60" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
               <folding>
                 <element signature="e#14#65#0" expanded="true" />
               </folding>
@@ -74,73 +62,56 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+        <entry file="file://$PROJECT_DIR$/vendor/github.com/labstack/echo/echo.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="6116" selection-start-line="6116" selection-end-line="6119" selection-end-column="12" />
+            <state relative-caret-position="194">
+              <caret line="489" selection-start-line="489" selection-end-line="489" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/create.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="6220" column="56" selection-start-line="6220" selection-start-column="49" selection-end-line="6220" selection-end-column="56" />
               <folding>
-                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="e#4038#4212#0#HTML" />
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#header#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#svg#0;n#a#0;n#li#3;n#ul#0;n#nav#0;n#div#1;n#div#0;n#header#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#212628#212633#0#HTML" expanded="true" />
-                <element signature="e#212735#212740#0#HTML" expanded="true" />
-                <element signature="e#225325#225332#0#HTML" expanded="true" />
-                <element signature="e#227149#227156#0#HTML" expanded="true" />
-                <element signature="e#229632#229639#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#266692#266698#0#HTML" expanded="true" />
-                <element signature="e#266698#266704#0#HTML" expanded="true" />
-                <element signature="e#266704#266710#0#HTML" expanded="true" />
-                <element signature="e#266710#266716#0#HTML" expanded="true" />
-                <element signature="e#266716#266722#0#HTML" expanded="true" />
-                <element signature="e#266905#266911#0#HTML" expanded="true" />
-                <element signature="e#266911#266917#0#HTML" expanded="true" />
-                <element signature="e#266917#266923#0#HTML" expanded="true" />
-                <element signature="e#266923#266929#0#HTML" expanded="true" />
-                <element signature="e#266929#266935#0#HTML" expanded="true" />
-                <element signature="e#267133#267139#0#HTML" expanded="true" />
-                <element signature="e#267139#267145#0#HTML" expanded="true" />
-                <element signature="e#267145#267151#0#HTML" expanded="true" />
-                <element signature="e#267151#267157#0#HTML" expanded="true" />
-                <element signature="e#267157#267163#0#HTML" expanded="true" />
-                <element signature="e#267359#267365#0#HTML" expanded="true" />
-                <element signature="e#267365#267371#0#HTML" expanded="true" />
-                <element signature="e#267371#267377#0#HTML" expanded="true" />
-                <element signature="e#267377#267383#0#HTML" expanded="true" />
-                <element signature="e#267383#267389#0#HTML" expanded="true" />
-                <element signature="e#267577#267583#0#HTML" expanded="true" />
-                <element signature="e#267583#267589#0#HTML" expanded="true" />
-                <element signature="e#267589#267595#0#HTML" expanded="true" />
-                <element signature="e#267595#267601#0#HTML" expanded="true" />
-                <element signature="e#267601#267607#0#HTML" expanded="true" />
-                <element signature="e#268345#268366#0#HTML" expanded="true" />
-                <element signature="e#268847#268887#0#HTML" expanded="true" />
-                <element signature="e#269747#269773#0#HTML" expanded="true" />
-                <element signature="e#270612#270638#0#HTML" expanded="true" />
-                <element signature="e#270902#270928#0#HTML" expanded="true" />
-                <element signature="e#271031#271057#0#HTML" expanded="true" />
-                <element signature="e#271477#271503#0#HTML" expanded="true" />
-                <element signature="e#271674#271700#0#HTML" expanded="true" />
+                <element signature="e#274101#274107#0#HTML" expanded="true" />
+                <element signature="e#274107#274113#0#HTML" expanded="true" />
+                <element signature="e#274113#274119#0#HTML" expanded="true" />
+                <element signature="e#274119#274125#0#HTML" expanded="true" />
+                <element signature="e#274125#274131#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/create.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/createDone.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="6237" column="20" selection-start-line="6237" selection-start-column="20" selection-end-line="6237" selection-end-column="20" />
+            <state relative-caret-position="394">
+              <caret line="6119" column="20" selection-start-line="6119" selection-start-column="20" selection-end-line="6119" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="6205" column="20" selection-start-line="6205" selection-start-column="20" selection-end-line="6205" selection-end-column="20" />
               <folding>
-                <element signature="e#273351#273357#0#HTML" expanded="true" />
-                <element signature="e#273357#273363#0#HTML" expanded="true" />
-                <element signature="e#273363#273369#0#HTML" expanded="true" />
-                <element signature="e#273369#273375#0#HTML" expanded="true" />
-                <element signature="e#273375#273381#0#HTML" expanded="true" />
+                <element signature="n#style#1;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hello.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -166,6 +137,7 @@
       <find>left-nav-list__item-link</find>
       <find>&lt;/h3&gt;</find>
       <find>nu</find>
+      <find>submit</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;/b&gt;&lt;/h3&gt;</replace>
@@ -181,8 +153,10 @@
         <option value="$PROJECT_DIR$/views/hello.html" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/views/create.html" />
+        <option value="$PROJECT_DIR$/views/createDone.html" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/views/list.html" />
       </list>
     </option>
   </component>
@@ -216,6 +190,19 @@
             <path>
               <item name="knap-dashboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="knap-dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="golang.org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="knap-dashboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="knap-dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="golang.org" type="462c0819:PsiDirectoryNode" />
+              <item name="x" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="knap-dashboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="knap-dashboard" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -229,6 +216,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
@@ -255,21 +243,37 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="knap-dashboard" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="github.com/bluebosh/knap-dashboard" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0726979" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2657512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.16986302" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -294,27 +298,10 @@
     <entry file="file://$PROJECT_DIR$/img/knap.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hello.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-          <folding>
-            <element signature="e#14#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="6116" selection-start-line="6116" selection-end-line="6119" selection-end-column="12" />
+        <state relative-caret-position="48">
+          <caret line="6101" column="15" selection-start-line="6101" selection-start-column="15" selection-end-line="6101" selection-end-column="15" />
           <folding>
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -365,16 +352,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/hello.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/createDone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="6119" column="20" selection-start-line="6119" selection-start-column="20" selection-end-line="6119" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="6237" column="20" selection-start-line="6237" selection-start-column="20" selection-end-line="6237" selection-end-column="20" />
+        <state relative-caret-position="127">
+          <caret line="6220" column="56" selection-start-line="6220" selection-start-column="49" selection-end-line="6220" selection-end-column="56" />
           <folding>
-            <element signature="e#273351#273357#0#HTML" expanded="true" />
-            <element signature="e#273357#273363#0#HTML" expanded="true" />
-            <element signature="e#273363#273369#0#HTML" expanded="true" />
-            <element signature="e#273369#273375#0#HTML" expanded="true" />
-            <element signature="e#273375#273381#0#HTML" expanded="true" />
+            <element signature="e#274101#274107#0#HTML" expanded="true" />
+            <element signature="e#274107#274113#0#HTML" expanded="true" />
+            <element signature="e#274113#274119#0#HTML" expanded="true" />
+            <element signature="e#274119#274125#0#HTML" expanded="true" />
+            <element signature="e#274125#274131#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/github.com/labstack/echo/echo.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="489" selection-start-line="489" selection-end-line="489" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="70" column="60" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
+          <folding>
+            <element signature="e#14#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="6205" column="20" selection-start-line="6205" selection-start-column="20" selection-end-line="6205" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#1;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
