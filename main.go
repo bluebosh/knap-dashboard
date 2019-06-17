@@ -16,8 +16,8 @@ import (
 	"strconv"
 )
 
-// var kubeconfig = "/Users/jordan/.bluemix/plugins/container-service/clusters/knative_pipeline/kube-config-dal10-knative_pipeline.yml"
-var	kubeconfig = "/Users/jordanzt/.bluemix/plugins/container-service/clusters/knative_pipeline/kube-config-dal10-knative_pipeline.yml"
+var kubeconfig = "/Users/jordan/.bluemix/plugins/container-service/clusters/knative_pipeline/kube-config-dal10-knative_pipeline.yml"
+// var	kubeconfig = "/Users/jordanzt/.bluemix/plugins/container-service/clusters/knative_pipeline/kube-config-dal10-knative_pipeline.yml"
 
 // TemplateRenderer is a custom html/template renderer for Echo framework
 type TemplateRenderer struct {
