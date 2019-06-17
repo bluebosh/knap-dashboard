@@ -13,11 +13,11 @@ import (
 	_ "k8s.io/client-go/plugin/pkg/client/auth/oidc" // from https://github.com/kubernetes/client-go/issues/345
 	"k8s.io/client-go/tools/clientcmd"
 	"net/http"
+	"os"
 	"strconv"
 )
 
-var kubeconfig = "/Users/jordan/.bluemix/plugins/container-service/clusters/knative_pipeline/kube-config-dal10-knative_pipeline.yml"
-// var	kubeconfig = "/Users/jordanzt/.bluemix/plugins/container-service/clusters/knative_pipeline/kube-config-dal10-knative_pipeline.yml"
+var kubeconfig string
 
 // TemplateRenderer is a custom html/template renderer for Echo framework
 type TemplateRenderer struct {
@@ -36,6 +36,11 @@ func (t *TemplateRenderer) Render(w io.Writer, name string, data interface{}, c 
 }
 
 func main() {
+	kubeconfig = os.Getenv("KUBECONFIG")
+	if kubeconfig == "" {
+		glog.Fatalf("Cannot get kubeconfig from: %v", "KUBECONFIG")
+	}
+
 	e := echo.New()
 
 	renderer := &TemplateRenderer{
