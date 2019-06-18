@@ -4,6 +4,7 @@ import (
 	"fmt"
 	knapv1 "github.com/bluebosh/knap/pkg/apis/knap/v1alpha1"
 	knapclientset "github.com/bluebosh/knap/pkg/client/clientset/versioned"
+	tektoncdclientset "github.com/tektoncd/pipeline/pkg/client/clientset/versioned"
 	"github.com/golang/glog"
 	"github.com/labstack/echo"
 	"github.com/labstack/gommon/color"
@@ -55,9 +56,9 @@ func main() {
 	e.File("/img/Fail.png", "img/fail.png")
 	e.File("/","index.html")
 	e.File("/create","views/create.html")
-	e.File("/templates", "views/templates.html")
 	e.GET("/get", Get)
 	e.GET("/list", List)
+	e.GET("/templates", Templates)
 	e.GET("/spaces", Spaces)
 	e.GET("/services", Services)
 	e.GET("/createnew", CreateNew)
@@ -131,6 +132,35 @@ func List(c echo.Context) error {
 	return c.Render(http.StatusOK, "list.html", appLst.Items)
 }
 
+func Templates(c echo.Context) error {
+	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		glog.Fatalf("Error building kubeconfig: %v", err)
+	}
+
+	tektoncdClient, err := tektoncdclientset.NewForConfig(cfg)
+	if err != nil {
+		glog.Fatalf("Error building knap clientset: %v", err)
+	}
+
+	pipelines, err := tektoncdClient.TektonV1alpha1().Pipelines("default").List(metav1.ListOptions{})
+	color.Cyan("%-40s%-80s\n", "Template Name", "Template Flow")
+	for i := 0; i < len(pipelines.Items); i++ {
+		pipeline := pipelines.Items[i]
+		taskFlow := ""
+		for i := 0; i < len(pipeline.Spec.Tasks); i++ {
+			task := pipeline.Spec.Tasks[i]
+			if taskFlow == "" {
+				taskFlow = task.Name
+			} else {
+				taskFlow = taskFlow + " -> " + task.Name
+			}
+		}
+		fmt.Printf("%-40s%-80s\n", pipeline.Name, taskFlow)
+	}
+	return c.Render(http.StatusOK, "templates.html", pipelines.Items)
+}
+
 func Spaces(c echo.Context) error {
 	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
 	if err != nil {
@@ -194,7 +224,7 @@ func CreateNew(c echo.Context) error {
 	app := &knapv1.Appengine{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      r.FormValue("appName") + "-appengine",
-			Namespace: "default",
+			Namespace: r.FormValue("namespace"),
 		},
 		Spec:
 		knapv1.AppengineSpec{

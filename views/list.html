@@ -6211,6 +6211,7 @@
 
             <tr>
                 <th>Application Name</th>
+                <th>Namespace</th>
                 <th>Version</th>
                 <th>Status</th>
                 <th>Instance</th>
@@ -6219,6 +6220,7 @@
             {{range .}}
                 <tr>
                     <td><a href="/get?name={{.Name}}">{{.Name}}</a></td>
+                    <td>{{.Namespace}}</td>
                     <td>{{.Generation}}</td>
                     <td><img src="img/{{.Status.Ready}}.png" alt="{{.Status.Ready}}" width="12px" height="12px" />&nbsp;{{.Status.Ready}}</td>
                     <td>{{.Status.Instance}}/{{.Spec.Size}}</td>

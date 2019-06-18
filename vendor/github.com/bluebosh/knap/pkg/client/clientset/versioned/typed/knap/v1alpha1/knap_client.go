@@ -5,8 +5,8 @@ package v1alpha1
 import (
 	v1alpha1 "github.com/bluebosh/knap/pkg/apis/knap/v1alpha1"
 	"github.com/bluebosh/knap/pkg/client/clientset/versioned/scheme"
-	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	rest "k8s.io/client-go/rest"
+	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 )
 
 type KnapV1alpha1Interface interface {

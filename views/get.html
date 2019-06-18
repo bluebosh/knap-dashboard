@@ -6087,22 +6087,28 @@
             <ul role="menubar" class="left-nav-list" data-left-nav-list>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/">Overview</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/create">Create Application</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/list">Application List</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/spaces">Spaces</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/services">Services</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/templates">Templates</a>
-                </li><br />
+                </li>
+                <br/>
             </ul>
             <button class="bx--interior-left-nav-collapse" data-interior-left-nav-collapse>
                 <svg class="bx--interior-left-nav-collapse__arrow" data-interior-left-nav-arrow
@@ -6127,12 +6133,15 @@
                 border-radius: 10px;
                 border: 1px solid #167F92;
             }
+
             .responstable tr {
                 border: 1px solid #D9E4E6;
             }
+
             .responstable tr:nth-child(odd) {
                 background-color: #EAF3F3;
             }
+
             .responstable th {
                 display: none;
                 border: 1px solid #FFF;
@@ -6140,46 +6149,57 @@
                 color: #FFF;
                 padding: 1em;
             }
+
             .responstable th:first-child {
                 display: table-cell;
                 text-align: center;
             }
+
             .responstable th:nth-child(2) {
                 display: table-cell;
             }
+
             .responstable th:nth-child(2) span {
                 display: none;
             }
+
             .responstable th:nth-child(2):after {
                 content: attr(data-th);
             }
+
             @media (min-width: 480px) {
                 .responstable th:nth-child(2) span {
                     display: block;
                 }
+
                 .responstable th:nth-child(2):after {
                     display: none;
                 }
             }
+
             .responstable td {
                 display: block;
                 word-wrap: break-word;
                 max-width: 7em;
             }
+
             .responstable td:first-child {
                 display: table-cell;
                 text-align: center;
                 border-right: 1px solid #D9E4E6;
             }
+
             @media (min-width: 480px) {
                 .responstable td {
                     border: 1px solid #D9E4E6;
                 }
             }
+
             .responstable th, .responstable td {
                 text-align: left;
                 margin: .5em 1em;
             }
+
             @media (min-width: 480px) {
                 .responstable th, .responstable td {
                     display: table-cell;
@@ -6199,44 +6219,95 @@
                 font-weight: normal;
                 color: #024457;
             }
+
             h1 span {
                 color: #167F92;
             }
         </style>
         <br>
         <h2><b>Application {{.Spec.AppName}} detail</b></h2><br>
-        This project aims to bring a simple CI/CD experience to end users from building to deploying a Cloud application on Kubernets (or Knative).  <br>
-        <br><br><br>
+        This project aims to bring a simple CI/CD experience to end users from building to deploying a Cloud application
+        on Kubernets (or Knative). <br>
+        <br><br>
         <table class="responstable">
             <tr>
-                <th width="25%">Application Name</th><td>{{.Name}}</td>
+                <th width="20%">Application Name</th>
+                <td>{{.Name}}</td>
             </tr>
             <tr>
-                <th>Version</th><td>{{.Generation}}</td>
+                <th>Namespace</th>
+                <td>{{.Namespace}}</td>
             </tr>
             <tr>
-                <th>Git Repo</th><td><a href="https://{{.Spec.GitRepo}}">{{.Spec.GitRepo}}</a></td>
+                <th>Version</th>
+                <td>{{.Generation}}</td>
             </tr>
             <tr>
-                <th>Git Revision</th><td>{{.Spec.GitRevision}}</td>
+                <th>Git Repo</th>
+                <td><a href="{{.Spec.GitRepo}}" target="_blank">{{.Spec.GitRepo}}</a></td>
             </tr>
             <tr>
-                <th>Ready</th><td><img src="img/{{.Status.Ready}}.png" alt="{{.Status.Ready}}" width="12px" height="12px" />&nbsp;{{.Status.Ready}}</td>
+                <th>Git Revision</th>
+                <td>{{.Spec.GitRevision}}</td>
             </tr>
             <tr>
-                <th>Status</th><td>{{.Status.Status}}</td>
+                <th>Ready</th>
+                <td><img src="img/{{.Status.Ready}}.png" alt="{{.Status.Ready}}" width="12px"
+                         height="12px"/>&nbsp;{{.Status.Ready}}</td>
             </tr>
             <tr>
-                <th>Instance</th><td>{{.Status.Instance}}/{{.Spec.Size}}</td>
+                <th>Status</th>
+                <td>{{.Status.Status}}</td>
             </tr>
             <tr>
-                <th>Domain</th> <td><a href="https://{{.Status.Domain}}">{{.Status.Domain}}</a></td>
+                <th>Instance</th>
+                <td>{{.Status.Instance}}/{{.Spec.Size}}</td>
             </tr>
             <tr>
-                <th style="vertical-align: middle;">Template</th> <td>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: green; font-size: 12px; vertical-align: middle;"><font color="white">source-to-image</font></td></tr></table>
-                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
-                    <table style="width: 250px; height: 50px; float:left;"><tr><td style="background-color: green; font-size: 12px; vertical-align: middle;"><font color="white">deploy-using-kubectl</font></td></tr></table>
+                <th>Domain</th>
+                <td>{{if eq .Status.Domain "NotReady"}}NotReady{{else}}<a href="https://{{.Status.Domain}}" target="_blank">https://{{.Status.Domain}}</a>{{end}}</td>
+            </tr>
+            <tr>
+                <th style="vertical-align: middle;">Template</th>
+                <td>
+                    {{.Status.PipelineRun.Name}}&nbsp;(Template: {{.Status.PipelineRun.Spec.PipelineRef.Name}})<br><br>
+                    <table style="width: 250px; height: 80px; float:left;">
+                        <tr>
+                            {{if eq .Status.Ready "Running"}}
+                                <td style="background-color: green; font-size: 12px; vertical-align: middle;">
+                                    <font color="white">
+                            {{else}}
+                                <td style="background-color: white; font-size: 12px; vertical-align: middle;">
+                                <font>
+                            {{end}}
+                                    ready-to-service<br>{{if .Status.PipelineRun.Status.CompletionTime}}{{.Status.PipelineRun.Status.CompletionTime}}{{else}}waiting{{end}}
+                                </font>
+                                </td>
+                        </tr>
+                    </table>
+                    {{range .Status.PipelineRun.Status.TaskRuns}}
+                        <table style="width: 50px; height: 80px; float:left;">
+                            <tr>
+                                <td style="font-size: 12px; vertical-align: middle;"><--</td>
+                            </tr>
+                        </table>
+                        <table style="width: 250px; height: 80px; float:left;">
+                            <tr>
+                                {{range .Status.Conditions}}
+                                {{if eq .Status "True"}}
+                                <td style="background-color: green; font-size: 12px; vertical-align: middle;">
+                                    <font color="white">
+                                    {{else}}
+                                <td style="background-color: white; font-size: 12px; vertical-align: middle;">
+                                    <font>
+                                    {{end}}
+                                    {{end}}
+                                    {{.PipelineTaskName}}<br>{{if .Status.CompletionTime}}{{.Status.CompletionTime}}{{else}}{{.Status.StartTime}}{{end}}
+                                    </font>
+                                </td>
+                            </tr>
+                        </table>
+                    {{end}}
                 </td>
             </tr>
         </table>

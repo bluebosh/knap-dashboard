@@ -6222,14 +6222,21 @@
                     <li>
                         <label>Resource Type</label>
                         <select name="resourceType" class="field-select">
-                            <option value="Git">Git</option>
-                            <option value="GCS">GCS [Not Implemented]</option>
-                            <option value="Custom">Custom [Not Implemented]</option>
+                            <option value="git">Git</option>
+                            <option value="image">Image [Not Implemented]</option>
+                            <option value="Storage">Storage [Not Implemented]</option>
                         </select>
                     </li>
                     <li>
                         <label>Application Name <span class="required">*</span></label>
                         <input type="text" name="appName" class="field-long" value="{{.Spec.AppName}}" />
+                    </li>
+                    <li>
+                        <label>Namespace</label>
+                        <select name="namespace" class="field-select">
+                            <option value="default">default</option>
+                            <option value="test">test</option>
+                        </select>
                     </li>
                     <li>
                         <label>Git Repo <span class="required">*</span></label>
@@ -6240,7 +6247,7 @@
                         <input type="text" name="gitRevision" class="field-long" value="{{.Spec.GitRevision}}" />
                     </li>
                     <li>
-                        <label>Watch Git</label>
+                        <label>Auto-Trigger</label>
                         <select name="watchGit" class="field-select">
                             <option value="false">False</option>
                             <option value="true">True [Not Implemented]</option>

@@ -6204,7 +6204,7 @@
             }
         </style>
         <br>
-        <h2><b>Template List [Developing]</b></h2><br>
+        <h2><b>Template List</b></h2><br>
         This project aims to bring a simple CI/CD experience to end users from building to deploying a Cloud application on Kubernets (or Knative).  <br>
         <br><br><br>
         <table class="responstable">
@@ -6213,34 +6213,17 @@
                 <th width="15%">Template Name</th>
                 <th>Template Flow</th>
             </tr>
+            {{range .}}
             <tr>
-                <td style="font-size: 12px; vertical-align: middle;">build-and-deploy</td>
+                <td style="font-size: 12px; vertical-align: middle;">{{.Name}}</td>
                 <td>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">source-to-image</font></td></tr></table>
-                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">deploy-using-kubectl</font></td></tr></table>
+                    {{range .Spec.Tasks}}
+                        <table style="width: 250px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">{{.Name}}</font></td></tr></table>
+                        <table style="width: 50px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">--></td></tr></table>
+                    {{end}}
                 </td>
             </tr>
-            <tr>
-                <td style="font-size: 12px; vertical-align: middle;">build-and-deploy-test</td>
-                <td>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">source-to-image</font></td></tr></table>
-                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">deploy-using-kubectl</font></td></tr></table>
-                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">test-on-cluster</font></td></tr></table>
-                </td>
-            </tr>
-            <tr>
-                <td style="font-size: 12px; vertical-align: middle;">more-complex</td>
-                <td>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">source-to-image</font></td></tr></table>
-                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">deploy-using-kubectl</font></td></tr></table>
-                    <table style="width: 100px; height: 50px; float:left;"><tr><td style="font-size: 12px; vertical-align: middle;">&nbsp;-->&nbsp;</td></tr></table>
-                    <table style="width: 200px; height: 50px; float:left;"><tr><td style="background-color: #76aaea; font-size: 12px; vertical-align: middle;"><font color="white">blue-green-upgrade</font></td></tr></table>
-                </td>
-            </tr>
+            {{end}}
         </table>
     </div>
 </main>

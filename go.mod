@@ -3,7 +3,7 @@ module github.com/bluebosh/knap-dashboard
 go 1.12
 
 require (
-	github.com/bluebosh/knap v0.0.0-20190615073538-021f67c20c37
+	github.com/bluebosh/knap v0.0.0-20190618030906-569b31473799
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/go-logfmt/logfmt v0.4.0 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
