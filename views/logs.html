@@ -6087,22 +6087,28 @@
             <ul role="menubar" class="left-nav-list" data-left-nav-list>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/">Overview</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/create">Create Application</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/list">Application List</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/spaces">Spaces</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/services">Services</a>
-                </li><br />
+                </li>
+                <br/>
                 <li role="menuitem" class="left-nav-list__item" data-interior-left-nav-item>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="startcoding" href="/templates">Templates</a>
-                </li><br />
+                </li>
+                <br/>
             </ul>
             <button class="bx--interior-left-nav-collapse" data-interior-left-nav-collapse>
                 <svg class="bx--interior-left-nav-collapse__arrow" data-interior-left-nav-arrow
@@ -6127,12 +6133,15 @@
                 border-radius: 10px;
                 border: 1px solid #167F92;
             }
+
             .responstable tr {
                 border: 1px solid #D9E4E6;
             }
+
             .responstable tr:nth-child(odd) {
                 background-color: #EAF3F3;
             }
+
             .responstable th {
                 display: none;
                 border: 1px solid #FFF;
@@ -6140,46 +6149,57 @@
                 color: #FFF;
                 padding: 1em;
             }
+
             .responstable th:first-child {
                 display: table-cell;
                 text-align: center;
             }
+
             .responstable th:nth-child(2) {
                 display: table-cell;
             }
+
             .responstable th:nth-child(2) span {
                 display: none;
             }
+
             .responstable th:nth-child(2):after {
                 content: attr(data-th);
             }
+
             @media (min-width: 480px) {
                 .responstable th:nth-child(2) span {
                     display: block;
                 }
+
                 .responstable th:nth-child(2):after {
                     display: none;
                 }
             }
+
             .responstable td {
                 display: block;
                 word-wrap: break-word;
                 max-width: 7em;
             }
+
             .responstable td:first-child {
                 display: table-cell;
                 text-align: center;
                 border-right: 1px solid #D9E4E6;
             }
+
             @media (min-width: 480px) {
                 .responstable td {
                     border: 1px solid #D9E4E6;
                 }
             }
+
             .responstable th, .responstable td {
                 text-align: left;
                 margin: .5em 1em;
             }
+
             @media (min-width: 480px) {
                 .responstable th, .responstable td {
                     display: table-cell;
@@ -6199,34 +6219,31 @@
                 font-weight: normal;
                 color: #024457;
             }
+
             h1 span {
                 color: #167F92;
             }
         </style>
         <br>
-        <h2><b>Application List</b></h2><br>
-        This project aims to bring a simple CI/CD experience to end users from building to deploying a Cloud application on Kubernets (or Knative).  <br>
-        <br><br><br>
+        <h2><b>Application {{.Spec.AppName}} logs [Not implemented]</b></h2><br>
+        This project aims to bring a simple CI/CD experience to end users from building to deploying a Cloud application
+        on Kubernets (or Knative). <br>
+        <br><br>
         <table class="responstable">
-
             <tr>
-                <th>Application Name</th>
-                <th>Namespace</th>
-                <th>Version</th>
-                <th>Status</th>
-                <th>Instance</th>
-                <th>Operation</th>
+                <th width="20%">Application Name</th>
+                <td>{{.Name}}</td>
             </tr>
-            {{range .}}
-                <tr>
-                    <td><a href="/get?name={{.Name}}">{{.Name}}</a></td>
-                    <td>{{.Namespace}}</td>
-                    <td>{{.Generation}}</td>
-                    <td><img src="img/{{.Status.Ready}}.png" alt="{{.Status.Ready}}" width="12px" height="12px" />&nbsp;{{.Status.Ready}}</td>
-                    <td>{{.Status.Instance}}/{{.Spec.Size}}</td>
-                    <td><a href="/logs?name={{.Name}}">Logs</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/edit?name={{.Name}}">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/delete?name={{.Name}}" onClick="return confirm('Are you absolutely sure you want to delete this application?')">Delete</a></td>
-                </tr>
-            {{end}}
+            <tr>
+                <th>Logs</th>
+                <td>
+                    [{{.CreationTimestamp}}]&nbsp;
+                    {{.Spec}}
+                    <br><br>
+                    [{{.CreationTimestamp}}]&nbsp;
+                    {{.Status}}
+                </td>
+            </tr>
         </table>
     </div>
 </main>

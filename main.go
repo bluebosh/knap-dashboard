@@ -65,6 +65,7 @@ func main() {
 	e.GET("/edit", Edit)
 	e.GET("/getedit", GetEdit)
 	e.GET("/delete", Delete)
+	e.GET("/logs", Logs)
 	e.Logger.Fatal(e.Start(":1323"))
 }
 
@@ -310,4 +311,23 @@ func GetEdit(c echo.Context) error {
 	return c.Render(http.StatusOK, "editDone.html", map[string]interface{}{
 		"name": r.FormValue("appName"),
 	})
+}
+
+func Logs(c echo.Context) error {
+	cfg, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	if err != nil {
+		glog.Fatalf("Error building kubeconfig: %v", err)
+	}
+
+	knapClient, err := knapclientset.NewForConfig(cfg)
+	if err != nil {
+		glog.Fatalf("Error building knap clientset: %v", err)
+	}
+
+	app, err := knapClient.KnapV1alpha1().Appengines("default").Get(c.Request().FormValue("name"), metav1.GetOptions{})
+	if err != nil {
+		glog.Fatalf("Error getting appengine: %v", c.Request().FormValue("name"))
+	}
+	fmt.Print("Get appengine", "appengine name", app.Name)
+	return c.Render(http.StatusOK, "logs.html", app)
 }
