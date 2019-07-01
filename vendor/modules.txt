@@ -86,12 +86,15 @@ github.com/peterbourgon/diskv
 # github.com/spf13/pflag v1.0.3
 github.com/spf13/pflag
 # github.com/tektoncd/pipeline v0.4.0
+github.com/tektoncd/pipeline/pkg/client/clientset/versioned
 github.com/tektoncd/pipeline/pkg/apis/pipeline/v1alpha1
+github.com/tektoncd/pipeline/pkg/client/clientset/versioned/typed/pipeline/v1alpha1
 github.com/tektoncd/pipeline/pkg/apis/pipeline
 github.com/tektoncd/pipeline/pkg/list
 github.com/tektoncd/pipeline/pkg/merge
 github.com/tektoncd/pipeline/pkg/names
 github.com/tektoncd/pipeline/pkg/templating
+github.com/tektoncd/pipeline/pkg/client/clientset/versioned/scheme
 # github.com/valyala/bytebufferpool v1.0.0
 github.com/valyala/bytebufferpool
 # github.com/valyala/fasttemplate v1.0.1

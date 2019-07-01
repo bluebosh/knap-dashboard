@@ -10,6 +10,7 @@ require (
 	github.com/google/gofuzz v1.0.0 // indirect
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/gommon v0.2.9
+	github.com/tektoncd/pipeline v0.4.0
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	k8s.io/apimachinery v0.0.0-20190221213512-86fb29eff628
 	k8s.io/client-go v2.0.0-alpha.0.0.20181126152608-d082d5923d3c+incompatible

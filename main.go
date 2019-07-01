@@ -4,10 +4,10 @@ import (
 	"fmt"
 	knapv1 "github.com/bluebosh/knap/pkg/apis/knap/v1alpha1"
 	knapclientset "github.com/bluebosh/knap/pkg/client/clientset/versioned"
-	tektoncdclientset "github.com/tektoncd/pipeline/pkg/client/clientset/versioned"
 	"github.com/golang/glog"
 	"github.com/labstack/echo"
 	"github.com/labstack/gommon/color"
+	tektoncdclientset "github.com/tektoncd/pipeline/pkg/client/clientset/versioned"
 	"html/template"
 	"io"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -54,8 +54,8 @@ func main() {
 	e.File("/img/Pending.png", "img/pending.png")
 	e.File("/img/Deployed.png", "img/deployed.png")
 	e.File("/img/Fail.png", "img/fail.png")
-	e.File("/","index.html")
-	e.File("/create","views/create.html")
+	e.File("/", "index.html")
+	e.File("/create", "views/create.html")
 	e.GET("/get", Get)
 	e.GET("/list", List)
 	e.GET("/templates", Templates)
@@ -128,7 +128,7 @@ func List(c echo.Context) error {
 	color.Cyan("%-30s%-20s%-20s%-20s%-20s\n", "Engine Name", "Application Name", "Ready", "Instance", "Domain")
 	for i := 0; i < len(appLst.Items); i++ {
 		app := appLst.Items[i]
-		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance) + "/" + fmt.Sprint(app.Spec.Size), app.Status.Domain)
+		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance)+"/"+fmt.Sprint(app.Spec.Size), app.Status.Domain)
 	}
 	return c.Render(http.StatusOK, "list.html", appLst.Items)
 }
@@ -141,7 +141,7 @@ func Templates(c echo.Context) error {
 
 	tektoncdClient, err := tektoncdclientset.NewForConfig(cfg)
 	if err != nil {
-		glog.Fatalf("Error building knap clientset: %v", err)
+		glog.Fatalf("Error building tektoncd clientset: %v", err)
 	}
 
 	pipelines, err := tektoncdClient.TektonV1alpha1().Pipelines("default").List(metav1.ListOptions{})
@@ -177,7 +177,7 @@ func Spaces(c echo.Context) error {
 	color.Cyan("%-30s%-20s%-20s%-20s%-20s\n", "Engine Name", "Application Name", "Ready", "Instance", "Domain")
 	for i := 0; i < len(appLst.Items); i++ {
 		app := appLst.Items[i]
-		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance) + "/" + fmt.Sprint(app.Spec.Size), app.Status.Domain)
+		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance)+"/"+fmt.Sprint(app.Spec.Size), app.Status.Domain)
 	}
 	return c.Render(http.StatusOK, "spaces.html", appLst.Items)
 }
@@ -197,7 +197,7 @@ func Services(c echo.Context) error {
 	color.Cyan("%-30s%-20s%-20s%-20s%-20s\n", "Engine Name", "Application Name", "Ready", "Instance", "Domain")
 	for i := 0; i < len(appLst.Items); i++ {
 		app := appLst.Items[i]
-		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance) + "/" + fmt.Sprint(app.Spec.Size), app.Status.Domain)
+		fmt.Printf("%-30s%-20s%-20s%-20s%-20s\n", app.Name, app.Spec.AppName, app.Status.Ready, fmt.Sprint(app.Status.Instance)+"/"+fmt.Sprint(app.Spec.Size), app.Status.Domain)
 	}
 	return c.Render(http.StatusOK, "services.html", appLst.Items)
 }
@@ -214,8 +214,7 @@ func CreateNew(c echo.Context) error {
 		glog.Fatalf("Error building knap clientset: %v", err)
 	}
 
-
-	size, err:= strconv.ParseInt(r.FormValue("size"),10,32)
+	size, err := strconv.ParseInt(r.FormValue("size"), 10, 32)
 	size32 := int32(size)
 	if err != nil {
 		//glog.Fatalf("Error creating application engine: %s", args[0])
@@ -227,13 +226,12 @@ func CreateNew(c echo.Context) error {
 			Name:      r.FormValue("appName") + "-appengine",
 			Namespace: r.FormValue("namespace"),
 		},
-		Spec:
-		knapv1.AppengineSpec{
-			AppName: r.FormValue("appName"),
-			GitRepo: r.FormValue("gitRepo"),
+		Spec: knapv1.AppengineSpec{
+			AppName:     r.FormValue("appName"),
+			GitRepo:     r.FormValue("gitRepo"),
 			GitRevision: r.FormValue("gitRevision"),
 			// GitWatch: r.FormValue("gitWatch"),
-			Size: size32,
+			Size:             size32,
 			PipelineTemplate: r.FormValue("template"),
 		},
 	}
@@ -282,12 +280,12 @@ func GetEdit(c echo.Context) error {
 		glog.Fatalf("Error building knap clientset: %v", err)
 	}
 
-	app, err := knapClient.KnapV1alpha1().Appengines("default").Get(r.FormValue("appName") + "-appengine", metav1.GetOptions{})
+	app, err := knapClient.KnapV1alpha1().Appengines("default").Get(r.FormValue("appName")+"-appengine", metav1.GetOptions{})
 	if err != nil {
-		glog.Fatalf("Error getting appengine: %v", r.FormValue("appName") + "-appengine")
+		glog.Fatalf("Error getting appengine: %v", r.FormValue("appName")+"-appengine")
 	}
 
-	size, err:= strconv.ParseInt(r.FormValue("size"),10,32)
+	size, err := strconv.ParseInt(r.FormValue("size"), 10, 32)
 	size32 := int32(size)
 	if err != nil {
 		//glog.Fatalf("Error creating application engine: %s", args[0])
