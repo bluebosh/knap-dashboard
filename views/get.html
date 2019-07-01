@@ -6271,7 +6271,7 @@
                 <th style="vertical-align: middle;">Template</th>
                 <td>
                     {{.Status.PipelineRun.Name}}&nbsp;(Template: {{.Status.PipelineRun.Spec.PipelineRef.Name}})<br><br>
-                    <table style="width: 250px; height: 80px; float:left;">
+                    <table style="width: 250px; height: 100px; float:left;">
                         <tr>
                             {{if eq .Status.Ready "Running"}}
                                 <td style="background-color: green; font-size: 12px; vertical-align: middle;">
@@ -6286,12 +6286,12 @@
                         </tr>
                     </table>
                     {{range .Status.PipelineRun.Status.TaskRuns}}
-                        <table style="width: 50px; height: 80px; float:left;">
+                        <table style="width: 50px; height: 100px; float:left;">
                             <tr>
                                 <td style="font-size: 12px; vertical-align: middle;"><--</td>
                             </tr>
                         </table>
-                        <table style="width: 250px; height: 80px; float:left;">
+                        <table style="width: 250px; height: 100px; float:left;">
                             <tr>
                                 {{range .Status.Conditions}}
                                 {{if eq .Status "True"}}
@@ -6302,7 +6302,7 @@
                                     <font>
                                     {{end}}
                                     {{end}}
-                                    {{.PipelineTaskName}}<br>{{if .Status.CompletionTime}}{{.Status.CompletionTime}}{{else}}{{.Status.StartTime}}{{end}}
+                                    {{.PipelineTaskName}}<br>{{.Status.StartTime}}<br>{{if .Status.CompletionTime}}{{.Status.CompletionTime}}{{else}}running{{end}}
                                     </font>
                                 </td>
                             </tr>
